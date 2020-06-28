@@ -10,15 +10,16 @@ import (
 
 func main() {
 	user := new(User)
-	db := DbConn("root", "123456", "192.168.11.120", "test", 3306)
+	db := DbConn("root", "123456", "localhost", "test", 3306)
 	defer db.Close()
 	//db.Model(&User{}).Table("t_user")
 	db.AutoMigrate(&User{})
+	db.Create(&User{Username: "zhou", Password: "123"})
 	db.First(&user)
 	userby, _ := json.Marshal(user)
 	resultJson := string(userby)
 	fmt.Print(resultJson)
-	//db.Create(&User{Username: "zhou", Password: "123"})
+	db.Create(&User{Username: "zhou", Password: "123"})
 }
 
 func QueryList() {
