@@ -16,5 +16,10 @@ func main() {
 	{
 		accController.POST("/save", controller.SaveAcc)
 	}
+	areaController := router.Group("/v1/area")
+	{
+		areaController.GET("/getArea", controller.AreaList)
+		areaController.GET("/getArea/:code", controller.AreaList)
+	}
 	router.Run() // listen and serve on 0.0.0.0:8080 (for windows "localhost:8080")
 }
