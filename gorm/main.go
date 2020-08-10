@@ -1,25 +1,20 @@
 package main
 
 import (
-	"encoding/json"
 	"fmt"
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/jinzhu/gorm"
+	"golang-awesome/gorm/model"
 	"log"
 )
 
 func main() {
-	user := new(User)
-	db := DbConn("root", "123456", "localhost", "test", 3306)
-	defer db.Close()
-	//db.Model(&User{}).Table("t_user")
-	db.AutoMigrate(&User{})
-	db.Create(&User{Username: "zhou", Password: "123"})
-	db.First(&user)
-	userby, _ := json.Marshal(user)
-	resultJson := string(userby)
-	fmt.Print(resultJson)
-	db.Create(&User{Username: "zhou", Password: "123"})
+	db := DbConn("root", "123456", "192.168.11.120", "test", 3306)
+	db.CreateTable(&model.Account{})
+	//model.Getdb().CreateTable(&model.Account{});
+	//model.Getdb().AutoMigrate(&model.Account{})
+	//acc := &model.Account{Username: "zhangsan", Sex: 1, Address: "广东省深圳市"}
+	//model.SaveAcc(acc)
 }
 
 func QueryList() {
