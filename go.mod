@@ -13,6 +13,7 @@ require (
 	github.com/jinzhu/gorm v1.9.14
 	github.com/k0kubun/colorstring v0.0.0-20150214042306-9440f1994b88 // indirect
 	github.com/kataras/iris/v12 v12.1.9-0.20200629180512-0baca774aa9b
+	github.com/labstack/echo/v4 v4.1.16
 	github.com/mattn/go-colorable v0.1.7 // indirect
 	github.com/satori/go.uuid v1.2.0 // indirect
 	github.com/smartystreets/goconvey v1.6.4 // indirect

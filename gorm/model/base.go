@@ -7,7 +7,11 @@ import (
 	"log"
 )
 
-var db = dbConn("root", "123456", "192.168.11.120", "test", 3306)
+var db *gorm.DB
+
+func init() {
+	db = dbConn("root", "123456", "localhost", "test", 3306)
+}
 
 func dbConn(MyUser, Password, Host, Db string, Port int) *gorm.DB {
 	connArgs := fmt.Sprintf("%s:%s@(%s:%d)/%s?charset=utf8&parseTime=True&loc=Local", MyUser, Password, Host, Port, Db)
@@ -15,6 +19,9 @@ func dbConn(MyUser, Password, Host, Db string, Port int) *gorm.DB {
 	if err != nil {
 		log.Fatal(err)
 	}
+
+	db1.DB().SetMaxIdleConns(20)
+	db1.DB().SetMaxOpenConns(15)
 	db1.SingularTable(true)
 	return db1
 }

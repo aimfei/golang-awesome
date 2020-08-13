@@ -1,19 +1,24 @@
 package model
 
-import "github.com/jinzhu/gorm"
+import (
+	"time"
+)
 
 type Account struct {
-	gorm.Model
-	Username string `gorm:"column:username",json:"username"`
-	Sex      int    `gorm:"column:sex",json:"sex"`
-	Address  string `gorm:"column:sex",json:"address"`
+	ID          uint32    `gorm:"size:11;AUTO_INCREMENT;primary_key"`
+	Username    string    `gorm:"column:username"`
+	Sex         int       `gorm:"column:sex"`
+	Address     string    `gorm:"column:address"`
+	GmtCreate   time.Time `gorm:"column:gmt_create"`
+	GmtModified time.Time `gorm:"column:gmt_modified"`
 }
 
 func (Account) TableName() string {
 	return "t_account"
 }
 
-func SaveAcc(model *Account) {
+func SaveAcc(model Account) {
+	db.NewRecord(model)
 	db.Create(&model)
 	db.NewRecord(model)
 }
