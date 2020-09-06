@@ -9,7 +9,7 @@ func FindList(code string) []*model.Area {
 	if len(code) == 0 {
 		code = "100000"
 	}
-	rows, err := db.Query("select code,`name` ,`level`,parent_code,abbreviation,name_lan2 from t_area where parent_code=?", code)
+	rows, err := db.Query("select code,`name`,`level`,parent_code,abbreviation,name_lan2 from t_area where parent_code=?", code)
 	if err != nil {
 		log.Printf("%s 查询错误", code)
 	}
