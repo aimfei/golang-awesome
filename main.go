@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	res := base.Success("张三")
+	res := grammar.Success("张三")
 	resjson, _ := json.Marshal(res)
 	fmt.Print(string(resjson))
 }
