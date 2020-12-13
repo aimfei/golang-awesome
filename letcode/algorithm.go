@@ -41,9 +41,6 @@ func Reverse(x int) int {
 	if x == 0 {
 		return 0
 	}
-	if x > 1463847421 || x < -8463847421 {
-
-	}
 	result := 0
 	for x != 0 {
 		result = result*10 + x%10
