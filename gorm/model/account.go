@@ -17,8 +17,9 @@ func (Account) TableName() string {
 	return "t_account"
 }
 
-func SaveAcc(model Account) {
-	db.NewRecord(model)
-	db.Create(&model)
-	db.NewRecord(model)
+func SaveAcc(model *Account) {
+	//db.NewRecord(model)
+	db.Create(model)
+
+	//db.NewRecord(model)
 }

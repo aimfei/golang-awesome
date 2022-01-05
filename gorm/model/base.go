@@ -10,7 +10,7 @@ import (
 var db *gorm.DB
 
 func init() {
-	db = dbConn("root", "123456", "localhost", "test", 3306)
+	db = dbConn("root", "password", "localhost", "db_test", 3306)
 }
 
 func dbConn(MyUser, Password, Host, Db string, Port int) *gorm.DB {
