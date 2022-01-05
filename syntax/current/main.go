@@ -1,6 +1,7 @@
 package main
 
 import (
+	"context"
 	"fmt"
 	"math/rand"
 	"sync"
@@ -40,3 +41,7 @@ var (
 	mu sync.Mutex
 	rw sync.RWMutex
 )
+
+func newCtx() context.Context {
+	return context.Background()
+}
