@@ -34,9 +34,7 @@ func PowderyTwo(num int64) bool {
 	return false
 }
 
-/**
-整数翻转
-*/
+//整数翻转
 func Reverse(x int) int {
 	if x == 0 {
 		return 0

@@ -2,7 +2,7 @@ package repos
 
 import (
 	"database/sql"
-	"golang-awesome/gin/databases"
+	"golang-awesome/web/gin/databases"
 	"log"
 )
 

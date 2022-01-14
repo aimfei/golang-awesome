@@ -1,16 +1,12 @@
 package main
 
 import (
-	"errors"
-	"fmt"
 	_ "github.com/go-sql-driver/mysql"
-	"github.com/jinzhu/gorm"
-	"golang-awesome/gorm/model"
-	"time"
+	model2 "golang-awesome/orm/gorm/model"
 )
 
 func main() {
-	acc := model.Account{Username: "zhangsan", Sex: 1, Address: "广东省深圳市", GmtCreate: time.Now(), GmtModified: time.Now()}
+	/*acc := model.Account{Username: "zhangsan", Sex: 1, Address: "广东省深圳市", GmtCreate: time.Now(), GmtModified: time.Now()}
 	gormDB := model.Getdb()
 	//gormDB.Create(&acc)
 	err := gormDB.Transaction(func(tx *gorm.DB) error {
@@ -28,7 +24,7 @@ func main() {
 	if err != nil {
 		fmt.Println(err)
 	}
-
+	*/
 	//model.SaveAcc(acc)
 	/*for true {
 		area := model.GetAreaByCode("210000")
@@ -39,7 +35,8 @@ func main() {
 		b, _ = json.Marshal(areaList)
 		fmt.Println(string(b))
 	}*/
-	/*gormDB := model.Getdb()
-	gormDB.AutoMigrate(&model.Account{}, &model.Area{})*/
+	//创建db
+	gormDB := model2.Getdb()
+	gormDB.AutoMigrate(&model2.Account{}, &model2.Area{})
 
 }

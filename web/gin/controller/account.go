@@ -2,9 +2,9 @@ package controller
 
 import (
 	"github.com/gin-gonic/gin"
-	"golang-awesome/gin/base"
-	"golang-awesome/gin/model"
-	"golang-awesome/gin/repos"
+	"golang-awesome/web/gin/base"
+	"golang-awesome/web/gin/model"
+	"golang-awesome/web/gin/repos"
 	"log"
 )
 

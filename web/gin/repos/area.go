@@ -1,7 +1,7 @@
 package repos
 
 import (
-	"golang-awesome/gin/model"
+	"golang-awesome/web/gin/model"
 	"log"
 )
 
