@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package user_service;
+option go_package = "github.com/aimfei/protocol/user_service";
+
+import "base_common.proto";
+
+service user_service{
+  rpc GetUserById(UserRequest) returns (base_common.BaseResult){}
+
+}
+
+message UserRequest{
+  uint64  userId = 10;
+  base_common.BaseQuery baseQuery = 2;
+
+}
+message UserResponse{
+  string username = 1;
+
+}

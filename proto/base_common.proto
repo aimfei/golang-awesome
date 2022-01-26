@@ -1,0 +1,22 @@
+syntax = "proto3";
+package base_common;
+option go_package = "github.com/aimfei/protocol/base_common";
+
+import "google/protobuf/any.proto";
+
+message BaseResult{
+  string  code = 1;
+  string  message = 2;
+  google.protobuf.Any data = 3;
+}
+
+message BaseQuery{
+  optional  uint32 currentPage = 1;//当前页码
+  optional  uint32 pageSize = 2;//每页数
+  optional  uint64 startTime = 3;//开始时间戳
+  optional uint64 endTime = 4;//结束时间戳
+  string nonceStr = 5;// 随机字符串
+  uint64 timestamp = 6;//请求时间戳
+}
+
+
