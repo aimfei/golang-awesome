@@ -13,7 +13,7 @@ func main() {
 	//gormDB.AutoMigrate(&model.User{}, &model.Balance{}, &model.BalanceChangeRecord{})
 	//user := &model.User{
 	//	Username: "qingcai",
-	//	Address:  "陕西省西安市",
+	//	Address:  "shanxixian",
 	//	Sex:      1,
 	//}
 	//dao.CreateWallet(context.Background(), user)
